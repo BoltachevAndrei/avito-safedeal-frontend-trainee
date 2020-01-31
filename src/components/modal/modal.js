@@ -86,7 +86,7 @@ export default class Modal extends Component {
     new Api().sendComment(this.props.image.id, {
       'name': this.state.username,
       'comment': this.state.comment,
-      'date': new Date(),
+      'date': Date.parse(String(new Date())),
     })
     .then(() => {
       this.props.toggleModal();
