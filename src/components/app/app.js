@@ -3,7 +3,7 @@ import PageTitle from '../page-title/page-title.js';
 import Pictures from '../pictures/pictures.js';
 import PageFooter from '../page-footer/page-footer.js';
 
-function App() {
+const App = () => {
   return (
     <div className="pictures-container">
       <PageTitle />
