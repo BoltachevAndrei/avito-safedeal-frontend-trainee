@@ -158,6 +158,7 @@ body {
   box-sizing: border-box;
   display: block;
   font-family: 'Roboto', Arial, sans-serif;
+  font-size: 13px;
   font-style: normal;
   font-weight: normal;
   height: 30px;
@@ -179,6 +180,7 @@ body {
   cursor: pointer;
   display: block;
   font-family: 'Roboto', Arial, sans-serif;
+  font-size: 13px;
   font-style: normal;
   font-weight: normal;
   height: 30px;
