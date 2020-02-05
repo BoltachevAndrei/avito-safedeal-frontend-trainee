@@ -6,7 +6,7 @@ import ModalOverlay from '../modal-overlay/modal-overlay.js';
 export default class Modal extends Component {
   constructor(props) {
     super(props);
-    this.onSubmitClick = this.onSubmitClick.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
     this.onInputChange = this.onInputChange.bind(this);
     this.validateForm = this.validateForm.bind(this);
     this.state = {
@@ -81,7 +81,7 @@ export default class Modal extends Component {
     });
   }
   
-  onSubmitClick(e) {
+  onSubmit(e) {
     e.preventDefault();
     new Api().sendComment(this.props.image.id, {
       'name': this.state.username,
@@ -108,7 +108,11 @@ export default class Modal extends Component {
               </li>
             )}
           </ul>
-          <form className="modal__form" action="">
+          <form
+            className="modal__form"
+            action=""
+            onSubmit={this.onSubmit}
+          >
             <input
               className="modal__input modal__input--name"
               name="username"
@@ -127,7 +131,6 @@ export default class Modal extends Component {
             />
             <button
               className={this.state.isFormValid ? "modal__submit" : "modal__submit modal__submit--disabled"}
-              onClick={this.onSubmitClick}
               disabled={!this.state.isFormValid}
             >
               Оставить комментарий
